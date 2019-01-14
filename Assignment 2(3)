@@ -1,0 +1,63 @@
+Q:- The function "echo_name" takes 2 parameters: a string value, "name1" and an integer value, "echo_int". 
+It returns a string that is a concatenation of "echo_int" copies of "name1".
+
+echo_name = lambda name1, echo_int: name1 * echo_int
+result = echo_name("acadgild",5)
+print(result)
+
+
+Q:- 2) Convert temperature in Celsius to Fahrenheit using map() and lambda functions
+
+Sample input
+Celsius = [49.2, 26.5, 47.3, 47.8]
+Expected Output
+[120.56, 79.7, 117.14, 118.03999999999999]
+
+
+celsius = [49.2, 26.5, 47.3, 47.8]
+fahrenheit = list (map(lambda x: (x * 9/5)+32 ,celsius))
+print (fahrenheit)
+
+
+Q:- The function filter(function, list) filters out all the elements of a list, for
+which the function function returns True.
+The function filter(f,l) needs a function f as its first argument. f re
+turns a Boolean value, i.e. either True or False. This function will be
+applied to every element of the list l. Only if f returns True will the
+element of the list be included in the result list
+Q. print the letters that are vowels using filter and lambda functions
+sample_string = "Welcome to AcadGild"
+
+sample_string = "Welcome to AcadGild"
+vowels = "aeiouAEIOU"
+finalVowel = []
+isVowel = lambda arg: arg in vowels
+def vowelFilter(sample_string):
+    for letter in sample_string:
+        if isVowel(letter):
+            finalVowel.append(letter)
+    return finalVowel
+print(vowelFilter(sample_string))
+
+
+Q:-Use generator expression to print out only alphabets from the following string
+string = "123@Welc34ometo12@ac#adGild"
+
+string="123@Welc34ometo12@ac#adGild"
+def letters(string):
+    valids = []
+    for letters in string:
+        if letters.isalpha():
+            valids.append(letters)
+    return ''.join(valids)
+print(letters(string))
+
+
+Q:-Implement a function longestWord() that takes a list of words and returns
+the longest one.
+Sample Word List
+word= ["January","Feburary","March","April","May","June","July"]
+Expected Output
+['Feburary']
+
+
