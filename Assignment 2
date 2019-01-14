@@ -1,0 +1,45 @@
+Q:- Write a program which accepts a sequence of comma-separated numbers from console and generate a list.
+
+X=input("Input values: ")
+list = X.split(",")
+print('List : ',list)
+
+
+Q:-Create the below pattern using nested for loop in Python.
+*
+* *
+* * *
+* * * *
+* * * * *
+* * * *
+* * *
+* *
+*
+
+n=5;
+for i in range(n):
+    for j in range(i):
+        print ('* ', end="")
+    print('')
+
+for i in range(n,0,-1):
+    for j in range(i):
+        print('* ', end="")
+    print('')
+    
+
+Q:-Write a Python program to reverse a word after accepting the input from the user.
+Sample Output:
+Input word: AcadGild
+Output: dilGdacA
+
+n = input("Input word: ")
+print ("Output: ",n[::-1])
+
+
+Q:- Write a Python Program to print the given string in the format specified in the sample
+output.
+WE, THE PEOPLE OF INDIA, having solemnly resolved to constitute India into a SOVEREIGN,
+SOCIALIST, SECULAR, DEMOCRATIC REPUBLIC and to secure to all its citizens
+
+print("WE, THE PEOPLE OF INDIA, \n\thaving solemnly resolved to constitute India into a SOVEREIGN,! \n\t\tSOCIALIST, SECULAR, DEMOCRATIC REPUBLIC \n\t\tand to secure to all its citizens")
