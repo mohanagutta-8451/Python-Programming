@@ -1,0 +1,38 @@
+Q:- How-to-count-distance-to-the-previous-zero
+For each value, count the difference of the distance from the previous zero (or the start of the Series, whichever is closer) and if there are no previous zeros,print the position
+Consider a DataFrame df where there is an integer column {'X':[7, 2, 0, 3, 4, 2, 5, 0, 3, 4]}
+The values should therefore be [1, 2, 0, 1, 2, 3, 4, 0, 1, 2]. Make this a new column 'Y'.
+
+import numpy as np
+import pandas as pd
+df=pd.DataFrame({'X':[7, 2, 0, 3, 4, 2, 5, 0, 3, 4]})
+Y=[1, 2, 0, 1, 2, 3, 4, 0, 1, 2]
+print(df)
+x=(df['X'] != 0).cumsum()
+y= x != x.shift()
+df['Y'] = y.groupby((y != y.shift()).cumsum()).cumsum()
+print(df['Y'])
+
+
+Q:- Create a DatetimeIndex that contains each business day of 2015 and use it to index a Series of random numbers.
+
+import numpy as np
+import pandas as pd
+date_time=pd.date_range(start='2015-01-01', end='2015-12-31', freq='B')
+s=pd.Series(np.random.rand(len(date_time)),index=date_time)
+print(s)
+
+
+Q:- Find the sum of the values in s for every Wednesday
+
+s[s.index.weekday==2].sum()
+
+
+Q:- Average For each calendar month
+
+s.resample('M').mean()
+
+
+Q:- For each group of four consecutive calendar months in s, find the date on which the highest value occurred.
+
+s.groupby(pd.Grouper(freq='4M')).idxmax()
